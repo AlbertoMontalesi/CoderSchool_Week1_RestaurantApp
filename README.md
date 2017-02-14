@@ -12,10 +12,10 @@ URL: **heroku-app-url**
 
 ### Required:
 
-* [ ] User must be able to go two pages: Menu, and Contact Us.
-* [ ] User can see the address and phone number on the contact us page.
-* [ ] User can see a basic google map on the Contact Us page.
-* [ ] User can navigate to a menu page with four sections:
+* [ x] User must be able to go two pages: Menu, and Contact Us.
+* [x ] User can see the address and phone number on the contact us page.
+* [ x] User can see a basic google map on the Contact Us page.
+* [ x] User can navigate to a menu page with four sections:
   * [ ] Breakfast
   * [ ] Lunch
   * [ ] Dinner
@@ -68,7 +68,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name]
+    Copyright [2017] [alberto montales]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
