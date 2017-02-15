@@ -1,13 +1,16 @@
 @import "bootstrap";
+@import "font-awesome";
 
 // VARIABLES //
 
-$brk-small : '(max-width : 768px)';
+$brk-small : '(max-width : 991px)';
+$brk-medium : '(min-width :991px)';
 $color_background_navigation:#303030;
 $color_background_body:#F1EBDA;
 $color_text:#333333;
 $color_text_light :#EFE9D8;
 
+$font : 16px;
 
 
 *, {
@@ -38,15 +41,60 @@ a:hover {
     display: inline-block;
     width:25%;
     height: 100vh;
-    
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
     @media #{$brk-small} {
     width:100%;
     height:auto;
     }
+
+    @media #{$brk-medium} {  //on bigger screen the navbar will be flex
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+}
+.navbar-brand {
+    font-size: 3rem;
 }
 .navbar a {
     color: $color_text_light !important;
 }
+
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+
+    @media #{$brk-medium} {
+        height: 60vh;
+        
+
+    }
+
+}
+.nav-item {
+    width:100% ;
+    display: inline-block;
+    text-align: center;
+    
+}
+nav button{
+    position: relative;
+    top: 1.7rem;
+    background-color: #bdc3c7 !important;
+
+}
+nav button:hover, nav button:focus {
+    background-color: $color_text_light !important;
+}
+
+//CONTAINERS
+
 .content-container {
     display: inline-block;
     width: 70%;
@@ -106,4 +154,36 @@ iframe {
 .menu_list img {
     width:100%;
     height: auto;
+}
+
+
+//STYLE THE TABLES
+table {
+    width: 100%;
+    height: auto;
+}
+tr {
+    margin-top: 2rem;
+    height: auto;
+}
+
+td,th {
+    height: auto;
+    padding-right: 1rem;
+}
+
+
+
+// STYLE THE ORDER FORMS
+
+.form-2,.form-3 {
+    width:44.5%;
+    display: inline-block;
+    
+}
+.form-2 {
+    margin-right: 5%;
+}
+.form-3{
+    margin-left: 5%;
 }

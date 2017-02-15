@@ -13,9 +13,16 @@
         
         <% @current_section.food_items.each do |item| %> <!--for each item i will create a div and inside display a tile, when you click the tile  it will show you bigger image and details -->
             <div class='menu_container'>
-                <%= image_tag item.image_url %> 
+                <%= image_tag item.image_url_or_default %> 
                 <span> <%= item.name %> </span>
                 <span> <%= number_to_currency item.price %> </span>
+                <span><%= link_to new_order_path(food_item_id: item.id) do %>   <!-- to have the icon as the link -->
+                    <i class="fa fa-cart-plus"></i>
+                    <% end %>
+                </span>
+
+                
+  
             </div>
         <% end %> <!-- end loop to display food -->
 
