@@ -1,0 +1,35 @@
+
+<h1>MENU</h1>
+
+    <div class= "btn-group"> 
+        <% @sections.each do |section| %>
+            <%= link_to section.name, menu_path(section_id: section.id), class: "btn #{params[:section_id] == section.id.to_s ? 'btn-primary' : 'btn-secondary' }" %>  <!-- remember to change the classes of the buttons -->
+        <% end %>
+    </div> <!-- end btn group --> 
+
+    <section class="menu_list">
+    <% if @current_section %>
+
+        
+        <% @current_section.food_items.each do |item| %> <!--for each item i will create a div and inside display a tile, when you click the tile  it will show you bigger image and details -->
+            <div class='menu_container'>
+                <%= image_tag item.image_url %> 
+                <span> <%= item.name %> </span>
+                <span> <%= number_to_currency item.price %> </span>
+            </div>
+        <% end %> <!-- end loop to display food -->
+
+   
+
+    <% else %> <!-- in case they did not select a section we display everything -->
+        <div class="alert"> Please select a section</div>
+    
+    <% end %>
+    
+    </section>   <!--container for the food elements -->
+
+    
+
+    <footer>
+        <%= link_to "New Food Item" ,new_food_item_path %>
+    </footer>

@@ -1,0 +1,109 @@
+@import "bootstrap";
+
+// VARIABLES //
+
+$brk-small : '(max-width : 768px)';
+$color_background_navigation:#303030;
+$color_background_body:#F1EBDA;
+$color_text:#333333;
+$color_text_light :#EFE9D8;
+
+
+
+*, {
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    color: $color_text;
+}
+a, a:hover {
+    text-decoration: none !important;
+    
+}
+a {
+    
+}
+a:hover {
+    
+
+}
+
+
+// NAVBAR
+
+
+.navbar {
+    background-color: $color_background_navigation;
+    color: $color_text_light !important;
+    display: inline-block;
+    width:25%;
+    height: 100vh;
+    
+    @media #{$brk-small} {
+    width:100%;
+    height:auto;
+    }
+}
+.navbar a {
+    color: $color_text_light !important;
+}
+.content-container {
+    display: inline-block;
+    width: 70%;
+    min-height: 100vh;
+    padding: 2rem;
+    
+    @media #{$brk-small} {
+    width:100%;
+    }
+}
+
+#box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $color_background_body;
+}
+
+// GOOGLE feDisplacementMap
+
+iframe {
+    width:100%;
+    min-height: 400px;
+    max-height: 700px;
+    border-radius: 1rem;
+}
+
+
+// STYLE THE ADDRESS AND HOURS TABLE
+
+
+
+
+//BTN GROUP 
+
+
+
+
+// MENU TILES
+
+.menu_list { //container for all the menu items
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu_container { //container for single menu item
+    background-color: orange;
+    border: 2px solid black;
+    width: 33.333%;
+    flex-basis: 400px;
+    height: auto;
+    min-height:5rem;
+    margin-top: 10px;
+}
+.menu_list img {
+    width:100%;
+    height: auto;
+}
