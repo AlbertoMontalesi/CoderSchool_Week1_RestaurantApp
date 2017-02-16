@@ -43,6 +43,8 @@ a:hover {
     height: 100vh;
     font-size: 1.2rem;
     text-transform: uppercase;
+    
+    
 
     @media #{$brk-small} {
     width:100%;
@@ -53,6 +55,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
     }
 }
 .navbar-brand {
@@ -86,11 +89,11 @@ a:hover {
 nav button{
     position: relative;
     top: 1.7rem;
-    background-color: #bdc3c7 !important;
+    background-color:$color_text_light !important;
 
 }
 nav button:hover, nav button:focus {
-    background-color: $color_text_light !important;
+    background-color: lighten($color_text_light,10%) !important;
 }
 
 //CONTAINERS
@@ -100,9 +103,13 @@ nav button:hover, nav button:focus {
     width: 70%;
     min-height: 100vh;
     padding: 2rem;
-    
+    @media #{$brk-medium}{
+    margin-left: 25%;
+    }
     @media #{$brk-small} {
-    width:100%;
+    width:90%;
+    margin: auto;
+    
     }
 }
 
@@ -143,9 +150,9 @@ iframe {
     justify-content: space-between;
 }
 .menu_container { //container for single menu item
-    background-color: orange;
-    border: 2px solid black;
-    width: 33.333%;
+    background-color: darken($color_background_body,15%);
+    border: 1px solid $color_background_navigation;
+    width: 33.3333333%;
     flex-basis: 400px;
     height: auto;
     min-height:5rem;
@@ -155,7 +162,20 @@ iframe {
     width:100%;
     height: auto;
 }
+.menu_container span {
+    margin-right: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color:$color_text;
+    text-align: center;
 
+}
+.menu_flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:0 1rem;
+}
 
 //STYLE THE TABLES
 table {
