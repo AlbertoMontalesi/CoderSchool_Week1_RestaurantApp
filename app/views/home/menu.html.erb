@@ -7,7 +7,19 @@
         <% @sections.each do |section| %>
             <%= link_to section.name, menu_path(section_id: section.id), class: "btn #{params[:section_id] == section.id.to_s ? 'btn-primary' : 'btn-secondary' }" %>  <!-- remember to change the classes of the buttons -->
         <% end %>
-    </div> <!-- end btn group --> 
+    </div> <!-- end btn group displaying the food sections--> 
+
+
+    <div class="card card-block">
+        <%= form_tag nil, method:'get' do %>
+            <%= hidden_field_tag :section, params[:section] %>
+            <div class="form-inline">
+                <%= select_tag :sort_column, options_for_select([['Name','name'],['Price','price']]), class:"form-control"%>
+                <%= select_tag :sort_direction, options_for_select([['Ascending','asc'],['Descending','desc']]), class:"form-control"%>
+                <%= submit_tag 'Sort', class: 'btn btn-secondary'%>
+            </div>
+        <% end %>
+    </div>  <!-- end card block to sort the food -->
 
     <section class="menu_list">
     <% if @current_section %>
@@ -15,7 +27,10 @@
         
         <% @current_section.food_items.each do |item| %> <!--for each item i will create a div and inside display a tile, when you click the tile  it will show you bigger image and details -->
             <div class='menu_container'>
-                <%= image_tag item.image_url_or_default %> 
+                <%= image_tag item.image_url_or_default %>
+                
+                
+                 
             
                 <div class='menu_flex'>
                     <span> <%= item.name %> </span>

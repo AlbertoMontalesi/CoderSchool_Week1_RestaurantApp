@@ -152,14 +152,15 @@ iframe {
 .menu_container { //container for single menu item
     background-color: darken($color_background_body,15%);
     border: 1px solid $color_background_navigation;
-    width: 33.3333333%;
-    flex-basis: 400px;
+    width:45%;
+    min-width:500px;
     height: auto;
     min-height:5rem;
     margin-top: 10px;
 }
 .menu_list img {
     width:100%;
+    min-width: auto;
     height: auto;
 }
 .menu_container span {
@@ -206,4 +207,25 @@ td,th {
 }
 .form-3{
     margin-left: 5%;
+}
+
+
+
+// IMAGE SHOW PAGE 
+#show_page {
+    font-size: 1.3rem;
+}
+#show_page p {
+    padding:1rem;
+}
+#show_page strong {
+    padding-right:1rem;
+}
+#show_image {
+    width: 100%;
+    height: auto;
+}
+#show_image img {
+    width: 100%;
+    
 }

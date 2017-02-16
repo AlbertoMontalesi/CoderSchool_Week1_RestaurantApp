@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
+<div id='show_page'>
+<p id='show_image'>
+  <%=image_tag @food_item.image_url %>
+</p>
 <p>
   <strong>Name:</strong>
   <%= @food_item.name %>
@@ -7,23 +12,20 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @food_item.description %>
+  <%= @food_item.description %> 
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @food_item.price %>
+  <%= @food_item.price %> VND
 </p>
 
 <p>
   <strong>Section:</strong>
   <%= @food_item.section.name %>
 </p>
+</div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @food_item.image_url %>
-</p>
 
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |
 <%= link_to 'Back', food_items_path %>
