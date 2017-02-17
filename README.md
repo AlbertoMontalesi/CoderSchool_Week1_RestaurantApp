@@ -48,7 +48,7 @@ URL: **heroku-app-url**
 
 The following **additional** features are implemented:
 
-* [ ] Something nice you added.
+* [ x] User can leave comments and see comments from other people
 
 The following **known issues**:
 

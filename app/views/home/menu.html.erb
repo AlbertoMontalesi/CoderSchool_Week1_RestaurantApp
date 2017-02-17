@@ -9,13 +9,14 @@
         <% end %>
     </div> <!-- end btn group displaying the food sections--> 
 
-
+     <div class="card card-block">
     <%= form_tag(food_items_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= submit_tag "Search", class: 'btn btn-secondary', :name => nil %>
     <% end %>  <!-- seach form -->
     
-    <div class="card card-block">
+    
+   
         <%= form_tag nil, method:'get' do %>
             <%= hidden_field_tag :section, params[:section] %>
             <div class="form-inline">
@@ -40,7 +41,7 @@
                 <div class='menu_flex'>
                     <span><%= link_to item.name, food_item_path(item) %></span>  <!-- to open a new page with the sigle food item -->
                     <span> <%= number_to_currency item.price %> </span>
-                    <span><%= link_to new_order_path(food_item_id: item.id) do %>   <!-- to have the icon as the link -->
+                    <span><%= link_to new_food_item_order_path(food_item_id: item.id) do %>   <!-- to have the icon as the link -->
                         <i class="fa fa-cart-plus"></i>
                         <% end %>
                     </span>

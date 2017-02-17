@@ -5,7 +5,7 @@
 <p id='show_image'>
   <%=image_tag @food_item.image_url %>
 </p>
-<p> <%= link_to new_order_path(food_item_id: @food_item.id) do %>   <!-- to have the icon as the link -->
+<p> <%= link_to new_food_item_order_path(food_item_id: @food_item.id) do %>   <!-- to have the icon as the link -->
       <i class="fa fa-cart-plus"></i>
        <% end %>
 </p>
@@ -29,8 +29,35 @@
   <%= @food_item.section.name %>
 </p>
 </div>
+<!-- to display comments -->
+<h2>Comments</h2>
+<% @food_item.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
 
-
+<!-- to comment -->
+<h2>Add a comment:</h2>
+<%= form_for([@food_item, @food_item.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 <%= link_to "Menu" , menu_path %>  <br><br>
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |
 <%= link_to 'Back', food_items_path %>
