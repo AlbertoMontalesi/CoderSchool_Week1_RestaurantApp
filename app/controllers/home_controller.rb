@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     @sections = Section.all
     if params[:section_id].present?
       @current_section = Section.find(params[:section_id])
+    
 end
 
    def order
