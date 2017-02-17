@@ -10,6 +10,11 @@
     </div> <!-- end btn group displaying the food sections--> 
 
 
+    <%= form_tag(food_items_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>  <!-- seach form -->
+    
     <div class="card card-block">
         <%= form_tag nil, method:'get' do %>
             <%= hidden_field_tag :section, params[:section] %>
@@ -39,6 +44,7 @@
                         <i class="fa fa-cart-plus"></i>
                         <% end %>
                     </span>
+                     <span><%= link_to 'Show', food_item_path(item) %></span>  <!-- to open a new page with the sigle food item -->
                 </div>
 
                 
@@ -52,6 +58,7 @@
         <div class="alert"> Please select a section</div>
     
     <% end %>
+    
     
     </section>   <!--container for the food elements -->
 

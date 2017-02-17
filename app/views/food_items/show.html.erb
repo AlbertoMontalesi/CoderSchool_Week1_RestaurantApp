@@ -25,6 +25,10 @@
   <%= @food_item.section.name %>
 </p>
 </div>
+<span> <%= link_to new_order_path(food_item_id: @food_item.id) do %>   <!-- to have the icon as the link -->
+      <i class="fa fa-cart-plus"></i>
+       <% end %>
+</span>
 
 
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |
