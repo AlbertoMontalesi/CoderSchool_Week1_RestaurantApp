@@ -19,8 +19,9 @@ class HomeController < ApplicationController
 
    
     if params[:sort_column]
-    @food_items = @food_items.order("#{params[:sort_column]} #{params[:sort_direction]}")
-    ## fix the code to make the sort function work
+      
+      @food_items = @food_items.order("#{params[:sort_column]} #{params[:sort_direction]}")
+      ## fix the code to make the sort function work
 
  
 
