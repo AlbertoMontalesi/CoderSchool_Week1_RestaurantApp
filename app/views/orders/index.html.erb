@@ -17,12 +17,12 @@
     <tbody>
         <% @order.each do |i| %>
         <tr>
-            <td>Name</td>
+            <td><%= i.name %></td>
             <td><%= i.food_item.name %> </td>
             <td><%= i.quantity %></td>
             <td><%= i.created_at.to_date %></td> 
-            <td>Address</td>
-            <td>Phone</td>
+            <td></td>
+            <td><%= i.phone %></td>
             <td><%= number_to_currency i.food_item.price * i.quantity %></td>
             <td> <%= number_to_currency 20000 %></td>
             <td> <%= number_to_currency (i.food_item.price * i.quantity )+ 20000  %></td>
