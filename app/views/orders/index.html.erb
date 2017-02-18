@@ -9,15 +9,25 @@
         <th>Date</th>
         <th>Address</th>
         <th>Phone</th>
+        <th>Price</th>
+        <th>Shipping</th>
+        <th>Total</th>
     
     </thead>
     <tbody>
         <% @order.each do |i| %>
         <tr>
-            
+            <td>Name</td>
             <td><%= i.food_item.name %> </td>
             <td><%= i.quantity %></td>
-            <td><%= i.created_at %></td>           
+            <td><%= i.created_at.to_date %></td> 
+            <td>Address</td>
+            <td>Phone</td>
+            <td><%= number_to_currency i.food_item.price * i.quantity %></td>
+            <td> <%= number_to_currency 20000 %></td>
+            <td> <%= number_to_currency (i.food_item.price * i.quantity )+ 20000  %></td>
+          
+                      
         </tr>
         <% end %>
 
