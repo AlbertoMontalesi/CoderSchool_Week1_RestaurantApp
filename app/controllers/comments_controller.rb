@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
+
+  validates :commenter, :comment, presence: true
     def create
-         
+  
     # NEED TO IMPLEMENT A VALIDATION TO AVOID BLANK COMMENTS
     @food_items = FoodItem.find(params[:food_item_id])
     @comment = @food_items.comments.create(comment_params)
