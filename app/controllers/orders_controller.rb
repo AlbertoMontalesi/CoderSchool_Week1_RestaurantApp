@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
     
     def index
+        @order = Order.all
     end
 
     def new
@@ -9,6 +10,7 @@ class OrdersController < ApplicationController
     end
 
     def create
+        @order = Order.all
         @item = FoodItem.find(params[:food_item_id])
         @order = @item.orders.build order_params
         

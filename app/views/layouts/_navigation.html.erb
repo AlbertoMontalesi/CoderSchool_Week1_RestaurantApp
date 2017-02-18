@@ -13,7 +13,13 @@
         <li class="nav-item">
         <%= link_to "Contact us", contact_us_path, class:"nav-link"%>
         </li>
-      
+        <li class='nav-item'>
+          <%= form_tag(food_items_path, :method => "get", id: "search-form", class:'form-inline') do %>  
+          <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+          <%= submit_tag "Search", class: 'btn btn-secondary', :name => nil %>
+        
+           <% end %>  <!-- seach form -->
+        </li>
       </ul>
     </div>
   </nav>

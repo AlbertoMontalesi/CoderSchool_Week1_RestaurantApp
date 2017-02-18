@@ -1,6 +1,6 @@
 
 
-<h1>MENU</h1>
+<h1><%= link_to "Menu", menu_path %></h1>
 
     <div class= "btn-group"> 
         <% @sections.each do |section| %>
@@ -8,29 +8,26 @@
         <% end %>
     </div> <!-- end btn group displaying the food sections--> 
 
-     <div class="card card-block">
-
-    <%= form_tag(food_items_path, :method => "get", id: "search-form") do %>    <!-- does not work -->
-        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-        <%= submit_tag "Search", class: 'btn btn-secondary', :name => nil %>
+     <div class="card card-block">    
         
-    <% end %>  <!-- seach form -->
-    
-    
    
-        <%= form_tag nil, method:'get' do %>  <!-- does not work -->
-            <%= hidden_field_tag :section, params[:section] %>
+       <%= form_tag nil, method:'get' do %>  
+            <%= hidden_field_tag :section_id, params[:section_id] %>  
             <div class="form-inline">
                 <%= select_tag :sort_column, options_for_select([['Name','name'],['Price','price']]), class:"form-control"%>
                 <%= select_tag :sort_direction, options_for_select([['Ascending','asc'],['Descending','desc']]), class:"form-control"%>
                 <%= submit_tag 'Sort', class: 'btn btn-secondary'%>
             </div>
         <% end %>
-    </div>  <!-- end card block to sort the food -->
+    </div>   <!--end card block to sort the food -->
+    
+
+     
+			
+            
 
     <section class="menu_list">
     <% if @current_section %>
-
         
         <% @current_section.food_items.each do |item| %> 
             <div class='menu_container'>
@@ -54,9 +51,24 @@
    
 
     <% else %> <!-- in case they did not select a section we display everything -->
-        <div class="alert"> Please select a section</div>
+
+        <% @food_items.each do |item| %> 
+            <div class='menu_container'>
+                <%= image_tag item.image_url_or_default %>
+            
+                <div class='menu_flex'>
+                    <span><%= link_to item.name, food_item_path(item) %></span>  <!-- to open a new page with the sigle food item -->
+                    <span> <%= number_to_currency item.price %> </span>
+                    <span><%= link_to new_food_item_order_path(food_item_id: item.id) do %>   <!-- to have the icon as the link -->
+                        <i class="fa fa-cart-plus"></i>
+                        <% end %>
+                    </span>                     
+                </div>  
+            </div>
+        <% end %> <!-- end loop to display food -->
+
     
-    <% end %>
+    <% end %> <!-- end if -->
     
     
     </section>   <!--container for the food elements -->
