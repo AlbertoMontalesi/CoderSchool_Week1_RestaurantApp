@@ -1,5 +1,31 @@
 <h1>Order Completed</h1>
 <span>
-<%= quantity %>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Address</th>
+        <th>Phone</th>
+    
+    </thead>
+    <tbody>
+        <% @order.each do |i| %>
+        <tr>
+            
+            <td><%= i.food_item.name %> </td>
+            <td><%= i.quantity %></td>
+            <td><%= i.created_at %></td>           
+        </tr>
+        <% end %>
+
+    
+    
+    </tbody>
+
+
+</table>
 
 </span>
