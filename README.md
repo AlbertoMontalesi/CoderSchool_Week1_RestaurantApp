@@ -6,7 +6,7 @@ Submitted by: **Alberto Montalesi**
 
 Time spent: **17** hours spent in total
 
-URL: **heroku-app-url**
+URL: **https://alberto-week1-restaurant.herokuapp.com/**
 
 ## User Stories
 
