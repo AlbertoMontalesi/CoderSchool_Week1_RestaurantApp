@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
 
-  validates :commenter, :comment, presence: true
     def create
   
     # NEED TO IMPLEMENT A VALIDATION TO AVOID BLANK COMMENTS
